@@ -1,0 +1,46 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; min-height: 100%; }
+body {
+  background: #0b0b0c;
+  color: #f5f5f7;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, sans-serif;
+}
+button, select { font: inherit; }
+button { cursor: pointer; }
+.shell { min-height: 100vh; position: relative; overflow: hidden; }
+.glow { position: fixed; inset: -35vh -10vw auto; height: 70vh; background: radial-gradient(circle at 50% 10%, rgba(255,255,255,.13), transparent 55%); pointer-events: none; }
+.container { width: min(1100px, calc(100% - 40px)); margin: 0 auto; position: relative; z-index: 1; }
+.topbar { padding: 28px 0 12px; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 650; letter-spacing: -.02em; }
+.logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(135deg, #1ed760, #fa2d48); display: grid; place-items: center; box-shadow: 0 10px 40px rgba(0,0,0,.3); }
+.logo::before { content: "→"; font-weight: 900; font-size: 18px; }
+.badge { border: 1px solid rgba(255,255,255,.1); background: rgba(255,255,255,.04); padding: 7px 10px; border-radius: 999px; color: #b5b5ba; font-size: 12px; }
+.hero { padding: 60px 0 34px; max-width: 780px; }
+h1 { font-size: clamp(48px, 8vw, 88px); line-height: .96; letter-spacing: -.065em; margin: 0 0 18px; }
+.lede { color: #a8a8ae; font-size: 19px; line-height: 1.5; margin: 0; max-width: 650px; }
+.grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; margin-top: 30px; }
+.card { background: rgba(255,255,255,.045); border: 1px solid rgba(255,255,255,.09); border-radius: 22px; padding: 22px; backdrop-filter: blur(18px); box-shadow: 0 20px 80px rgba(0,0,0,.25); }
+.card h2 { margin: 0 0 8px; font-size: 17px; letter-spacing: -.02em; }
+.card p { margin: 0; color: #96969e; line-height: 1.45; font-size: 14px; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.state { margin-top: 18px; min-height: 44px; display: flex; align-items: center; gap: 12px; }
+.dot { width: 9px; height: 9px; border-radius: 50%; background: #626267; box-shadow: 0 0 0 5px rgba(98,98,103,.08); flex: 0 0 auto; }
+.dot.on { background: #39e179; box-shadow: 0 0 0 5px rgba(57,225,121,.08); }
+.btn { border: 0; border-radius: 12px; padding: 11px 14px; color: #0b0b0c; background: #f5f5f7; font-weight: 650; }
+.btn.dark { background: #1e1e22; color: #fff; border: 1px solid rgba(255,255,255,.09); }
+.btn:disabled { opacity: .45; cursor: not-allowed; }
+.btn.small { padding: 8px 11px; font-size: 12px; border-radius: 10px; }
+.actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 18px; }
+.control { margin-top: 18px; }
+.label { display: block; font-size: 12px; color: #86868d; margin-bottom: 7px; }
+.select { width: 100%; border-radius: 12px; border: 1px solid rgba(255,255,255,.1); background: #141418; color: #fff; padding: 11px 12px; outline: none; }
+.status { margin-top: 30px; border-top: 1px solid rgba(255,255,255,.08); padding-top: 20px; }
+.statusHead { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; }
+.statusTitle { font-size: 13px; color: #fff; font-weight: 650; }
+.muted { color: #75757c; font-size: 12px; }
+.log { margin-top: 12px; background: #09090a; border: 1px solid rgba(255,255,255,.06); border-radius: 14px; padding: 12px; color: #a8a8ae; font: 12px/1.55 ui-monospace, SFMono-Regular, Menlo, monospace; max-height: 260px; overflow: auto; white-space: pre-wrap; }
+.note { margin-top: 28px; color: #77777e; font-size: 12px; line-height: 1.55; max-width: 760px; }
+.footer { padding: 44px 0 70px; color: #5f5f66; font-size: 12px; }
+.error { margin-top: 20px; padding: 12px 14px; border-radius: 13px; border: 1px solid rgba(250,45,72,.25); background: rgba(250,45,72,.07); color: #ff8c9b; font-size: 13px; }
+.success { color: #64ed97; }
+@media (max-width: 760px) { .container { width: min(100% - 24px, 1100px); } .grid { grid-template-columns: 1fr; } .hero { padding-top: 42px; } h1 { font-size: 54px; } }
